@@ -514,6 +514,11 @@ body {
 }
 
 a {
+  color: rgb(241, 238, 238);
+  text-decoration: none;
+}
+
+a {
   color: white;
   text-decoration: none !important;
 }
