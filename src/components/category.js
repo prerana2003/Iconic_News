@@ -25,7 +25,7 @@ export class Category extends Component {
           </Link>
         </a>
         <a className="nav-item" id="cate_items">
-          <Link className="nav-link" id="id_fora_collapse" to="/general">
+          <Link className="nav-link" id="id_fora_collapse" to="/top">
             <button id="category_btn">
               <NewspaperIcon id="category_icons" />
               General

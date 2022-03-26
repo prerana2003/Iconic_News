@@ -7,7 +7,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 export class News extends Component {
   static defaultProps = {
     country: "in",
-    pageSize: 4,
+    pageSize: 1,
   };
   static propTypes = {
     country: PropTypes.string,
@@ -22,11 +22,11 @@ export class News extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      articles: [],
+      results: [],
       loading: true,
       page: 1,
       totalResults: 0,
-      loader: false
+      loader: false,
     };
     document.title = `${this.capitalizeFirstLetter(
       this.props.category
@@ -36,43 +36,20 @@ export class News extends Component {
   async componentDidMount() {
     this.props.setProgress(10);
 
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=dfce1de9c8594fc2898a57dbdcd0a006&pageSize=${this.props.pageSize}`;
+    let url = `https://newsdata.io/api/1/news?apikey=pub_5811eeeb9c2ee8efbe0956152bd19f024775&country=${this.props.country}&category=${this.props.category}`;
+
     let data = await fetch(url);
     this.props.setProgress(30);
-
 
     let parsedData = await data.json();
     // console.log(parsedData);
     this.setState({
-      articles: parsedData.articles,
-      totalArticles: parsedData.totalResults,
+      results: parsedData.results,
       totalResults: parsedData.totalResults,
-      loading: false
+      loading: false,
     });
     this.props.setProgress(100);
   }
-
-  fetchMoreData = async () => {
-    this.setState({
-      loader: true
-    });
-    this.setState({ page: this.state.page + 1 });
-    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=dfce1de9c8594fc2898a57dbdcd0a006&page=${this.state.page}=pageSize=${this.props.pageSize}`;
-    let data = await fetch(url);
-
-    let parsedData = await data.json();
-
-    if(parsedData.status === "ok"){
-    this.setState({
-      page: this.state.page + 1,
-      articles: parsedData.articles,
-      totalResults: parsedData.totalResults,
-    });
-  }
-  this.setState({
-    loader: false
-  });
-  };
 
   render() {
     return (
@@ -82,15 +59,15 @@ export class News extends Component {
         </h1>
         {this.state.loading && <Spinner />}
         <InfiniteScroll
-          dataLength={this.state.articles.length}
+          dataLength={this.state.results.length}
           next={this.fetchMoreData}
-          hasMore={this.state.articles.length !== this.state.totalResults}
+          hasMore={this.state.results.length !== this.state.totalResults}
           loader={this.state.loader && <Spinner />}
         >
           <div className="container">
             <div className="row">
               {!this.state.loading &&
-                this.state.articles.map((element) => {
+                this.state.results.map((element) => {
                   return (
                     <div className="col-md-4 my-3" key={element.url}>
                       <NewsItem
@@ -101,11 +78,11 @@ export class News extends Component {
                             ? element.description.slice(0, 120)
                             : ""
                         }
-                        imageUrl={element.urlToImage}
+                        imageUrl={element.image_url}
                         newsUrl={element.url}
                         author={element.author}
-                        date={element.publishedAt}
-                        source={element.source.name}
+                        date={element.pubDate}
+                        source={element.source_id}
                       />
                     </div>
                   );

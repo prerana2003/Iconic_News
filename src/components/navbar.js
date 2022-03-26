@@ -47,11 +47,7 @@ export default function NavBar() {
               </Link>
             </li>
             <li className="nav-item" id="collapse__items__3">
-              <Link
-                className="nav-link"
-                id="id__for__a__collapse"
-                to="/general"
-              >
+              <Link className="nav-link" id="id__for__a__collapse" to="/top">
                 GENERAL
               </Link>
             </li>

@@ -52,12 +52,12 @@ export default class App extends Component {
                 category="entertainment"
               />
             </Route>
-            <Route exact path="/general" key="general">
+            <Route exact path="/top" key="general">
               <News
                 setProgress={this.setProgress}
                 pageSize={6}
                 country="in"
-                category="general"
+                category="top"
               />
             </Route>
             <Route exact path="/health" key="health">

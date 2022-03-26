@@ -10,7 +10,7 @@ export class Article1 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      articles: [1],
+      results: [5],
       loading: true,
     };
     document.title = `Iconic News`;
@@ -18,14 +18,14 @@ export class Article1 extends Component {
 
   async componentDidMount() {
     let url =
-      "https://newsapi.org/v2/top-headlines?country=in&apiKey=dfce1de9c8594fc2898a57dbdcd0a006";
+      "https://newsdata.io/api/1/news?apikey=pub_5811eeeb9c2ee8efbe0956152bd19f024775&country=in&category=top";
     this.setState({ loading: true });
 
     let data = await fetch(url);
     let parsedData = await data.json();
     // console.log(parsedData);
     this.setState({
-      articles: parsedData.articles,
+      results: parsedData.results,
     });
   }
 
@@ -63,53 +63,53 @@ export class Article1 extends Component {
                 ></li>
               </ol>
               <div className="carousel-inner">
-                {this.state.articles.slice(2, 3).map((element) => {
+                {this.state.results.slice(0, 1).map((element) => {
                   return (
                     <ArticleItem1
                       key={element.title}
                       title={element.title}
-                      imageUrl={element.urlToImage}
-                      date={element.publishedAt}
+                      imageUrl={element.image_url}
+                      date={element.pubDate}
                     />
                   );
                 })}
-                {this.state.articles.slice(5, 6).map((element) => {
+                {this.state.results.slice(1, 2).map((element) => {
                   return (
                     <ArticleItem2
                       key={element.title}
                       title={element.title}
-                      imageUrl={element.urlToImage}
-                      date={element.publishedAt}
+                      imageUrl={element.image_url}
+                      date={element.pubDate}
                     />
                   );
                 })}
-                {this.state.articles.slice(8, 9).map((element) => {
+                {this.state.results.slice(2, 3).map((element) => {
                   return (
                     <ArticleItem3
                       key={element.title}
                       title={element.title}
-                      imageUrl={element.urlToImage}
-                      date={element.publishedAt}
+                      imageUrl={element.image_url}
+                      date={element.pubDate}
                     />
                   );
                 })}
-                {this.state.articles.slice(11, 12).map((element) => {
+                {this.state.results.slice(3, 4).map((element) => {
                   return (
                     <ArticleItem4
                       key={element.title}
                       title={element.title}
-                      imageUrl={element.urlToImage}
-                      date={element.publishedAt}
+                      imageUrl={element.image_url}
+                      date={element.pubDate}
                     />
                   );
                 })}
-                {this.state.articles.slice(14, 15).map((element) => {
+                {this.state.results.slice(4, 5).map((element) => {
                   return (
                     <ArticleItem5
                       key={element.title}
                       title={element.title}
-                      imageUrl={element.urlToImage}
-                      date={element.publishedAt}
+                      imageUrl={element.image_url}
+                      date={element.pubDate}
                     />
                   );
                 })}

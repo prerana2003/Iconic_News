@@ -6,18 +6,19 @@ class Aside extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      articles: [],
+      results: [],
       loading: false,
     };
   }
 
   async componentDidMount() {
     let url =
-      "https://newsapi.org/v2/top-headlines?country=in&apiKey=dfce1de9c8594fc2898a57dbdcd0a006";
+      " https://newsdata.io/api/1/news?apikey=pub_5811eeeb9c2ee8efbe0956152bd19f024775&country=in";
+     
     let data = await fetch(url);
     let parsedData = await data.json();
     this.setState({
-      articles: parsedData.articles,
+      results: parsedData.results,
     });
   }
 
@@ -28,12 +29,12 @@ class Aside extends Component {
           <h4 id="recent" className="recent__news__h4">
             RECENT NEWS
           </h4>
-          {this.state.articles.slice(0, 5).map((element, i) => {
+          {this.state.results.slice(0, 5).map((element, i) => {
             return (
               <AsideItem
                 key={i}
                 title={element.title}
-                imageUrl={element.urlToImage}
+                imageUrl={element.image_url}
               />
             );
           })}
