@@ -515,7 +515,7 @@ body {
 
 a {
   color: white;
-  text-decoration: underline;
+  text-decoration: none !important;
 }
 
 a,
@@ -537,6 +537,7 @@ a:focus {
 
 .maqueA:hover {
   color: lightsalmon;
+  font-weight: 2rem;
 }
 
 #news_card {
@@ -746,7 +747,7 @@ a:focus {
 }
 
 hr:not([size]) {
-  height: 0px !important;
+  height: 2px !important;
 }
 
 /* code for Hamburgerdrawer */

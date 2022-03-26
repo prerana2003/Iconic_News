@@ -14,8 +14,6 @@ export class Category extends Component {
   render() {
     return (
       <div id="category_items">
-        <hr id="hr_line2" />
-
         <a className="nav-item" id="cate_items">
           <Link className="nav-link" id="id_fora_collapse" to="/">
             <button id="category_btn">
