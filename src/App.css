@@ -542,6 +542,7 @@ a:focus {
 
 .maqueA:hover {
   color: lightsalmon;
+  text-decoration: none;
   font-weight: 2rem;
 }
 
@@ -802,6 +803,7 @@ hr:not([size]) {
   -webkit-transform: translateY(-5px);
   -ms-transform: translateY(-5px);
   transform: scale(1.05);
+  text-decoration:none;
   color: lightsalmon;
   /* background-color: #333; */
 }
