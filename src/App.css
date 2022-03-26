@@ -514,7 +514,8 @@ body {
 }
 
 a {
-  text-decoration: none !important;
+  color: white;
+  text-decoration: underline;
 }
 
 a,
@@ -749,6 +750,9 @@ hr:not([size]) {
 }
 
 /* code for Hamburgerdrawer */
+.css-wf16b5 {
+  background-color: #111213 !important;
+}
 
 #menuIcon {
   margin-left: -40px;
