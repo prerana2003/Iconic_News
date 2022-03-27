@@ -39,7 +39,7 @@ export class NewsItem extends Component {
                 </div>{" "}
                 <div className="news-content">
                   <div className="news_postdate">
-                    <span> Jan 03, 2019 </span>{" "}
+                    <span> {date} </span>{" "}
                   </div>{" "}
                   <a href={newsUrl} target={"_blank"} rel="noreferrer">
                     <h3 id="title__newsitem-h3"> {title} </h3>{" "}
