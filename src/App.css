@@ -351,6 +351,11 @@ body {
     align-items: center;
   }
 
+  #btext__news__sec {
+
+    width: 437px;
+  }
+
   .h5__class_search, p {
     font-size: 13px !important;
   }
