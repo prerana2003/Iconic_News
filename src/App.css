@@ -540,6 +540,10 @@ a:focus {
   -o-transition-duration: .2s;
 }
 
+.maqueA {
+  color: white;
+}
+
 .maqueA:hover {
   color: lightsalmon;
   text-decoration: none;
@@ -737,6 +741,7 @@ a:focus {
   background-color: #111213 !important;
 }
 
+
 .btn-primary {
   color: #fff;
   background-color: #111213;
@@ -803,7 +808,7 @@ hr:not([size]) {
   -webkit-transform: translateY(-5px);
   -ms-transform: translateY(-5px);
   transform: scale(1.05);
-  text-decoration:none;
+  text-decoration: none;
   color: lightsalmon;
   /* background-color: #333; */
 }
