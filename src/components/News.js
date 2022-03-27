@@ -79,7 +79,7 @@ export class News extends Component {
                             : ""
                         }
                         imageUrl={element.image_url}
-                        newsUrl={element.url}
+                        newsUrl={element.link}
                         author={element.author}
                         date={element.pubDate}
                         source={element.source_id}

@@ -741,6 +741,12 @@ a:focus {
   background-color: #111213 !important;
 }
 
+.btn-primary {
+  color: #fff;
+  background-color: #0c0303;
+  border-color: #04070c;
+}
+
 
 .btn-primary {
   color: #fff;
