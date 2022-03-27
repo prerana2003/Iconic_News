@@ -17,7 +17,10 @@ export class NewsItem extends Component {
         <div className="card">
           <section className="news-section">
             <div className="news-item__cards">
-              <span className="badge rounded-pill bg-dark" id="source__badge__pink">
+              <span
+                className="badge rounded-pill bg-dark"
+                id="source__badge__pink"
+              >
                 {" "}
                 {source}{" "}
               </span>{" "}
@@ -38,9 +41,9 @@ export class NewsItem extends Component {
                   <div className="news_postdate">
                     <span> Jan 03, 2019 </span>{" "}
                   </div>{" "}
-                    <a href={newsUrl} target={"_blank"} rel="noreferrer">
-                      <h3 id="title__newsitem-h3"> {title} </h3>{" "}
-                    </a>{" "}
+                  <a href={newsUrl} target={"_blank"} rel="noreferrer">
+                    <h3 id="title__newsitem-h3"> {title} </h3>{" "}
+                  </a>{" "}
                   <p> {description} </p>{" "}
                   <span>
                     <p className="card-text">

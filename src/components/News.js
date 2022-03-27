@@ -69,7 +69,7 @@ export class News extends Component {
               {!this.state.loading &&
                 this.state.results.map((element) => {
                   return (
-                    <div className="col-md-4 my-3" key={element.url}>
+                    <div className="col-md-4 my-3" key={element.link}>
                       <NewsItem
                         key={element.title}
                         title={element.title ? element.title.slice(0, 60) : ""}
