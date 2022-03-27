@@ -743,16 +743,10 @@ a:focus {
 
 .btn-primary {
   color: #fff;
-  background-color: #0c0303;
-  border-color: #04070c;
+  background-color: #0c0303 !important;
+  border-color: #04070c !important;
 }
 
-
-.btn-primary {
-  color: #fff;
-  background-color: #111213;
-  border-color: #111213;
-}
 
 .btn-primary:hover {
   background-color: #111213 !important;
